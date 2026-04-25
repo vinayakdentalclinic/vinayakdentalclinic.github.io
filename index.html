@@ -274,8 +274,7 @@
         }
         .service-card:hover .svc-arrow { background: rgba(255,255,255,0.2); color: white; transform: translateX(4px); }
 
-        /* Gallery */
-       /* ===== GALLERY ===== */
+        /* ===== GALLERY ===== */
 #gallery { background: var(--bg); }
 .gallery-grid {
     display: grid;
@@ -291,18 +290,17 @@
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 0.4s ease;
-    height: 240px;
+    /* NO fixed height – the photo decides the size */
     background: var(--bg2);
 }
 .gallery-item:nth-child(1) { grid-column: span 2; }
 .gallery-item:nth-child(4) { grid-column: span 2; }
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+    height: auto;               /* keeps the original aspect ratio */
+    display: block;             /* removes any extra space below the image */
     transition: transform 0.5s ease;
-    padding: 8px;
+    /* no object-fit needed – the image fully fills the width */
 }
 .gallery-item:hover img {
     transform: scale(1.05);
@@ -312,6 +310,7 @@
     box-shadow: var(--shadow-lg);
     transform: translateY(-4px);
 }
+
 
         /* Lightbox */
         .lightbox-overlay {
